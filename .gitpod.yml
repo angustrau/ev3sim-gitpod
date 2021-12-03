@@ -1,10 +1,7 @@
-image: gitpod/workspace-full-vnc
+image:
+  file: .gitpod.Dockerfile
 tasks:
-  - init: |
-        pyenv install 3.9.7
-        pyenv global 3.9.7
-        pip3 install ev3sim==2.2.2
-    command: ev3sim
+  - command: ev3sim
 ports:
   - port: 5900
     onOpen: ignore
