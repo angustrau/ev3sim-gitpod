@@ -3,7 +3,7 @@ tasks:
   - init: |
         pyenv install 3.9.7
         pyenv global 3.9.7
-        python3 install ev3sim==2.2.2
+        pip3 install ev3sim==2.2.2
     command: ev3sim
 ports:
   - port: 5900
