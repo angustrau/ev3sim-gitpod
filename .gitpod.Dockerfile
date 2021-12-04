@@ -16,5 +16,6 @@ RUN sed -i -e 's/xdg-open/code/g' /home/gitpod/ev3sim/ev3sim/utils.py \
 ENV SDL_AUDIODRIVER=disk
 ENV SDL_DISKAUDIOFILE=/dev/null
 
-# Set X server resolution
+# Set window settings
 ENV CUSTOM_XVFB_WxHxD=960x720x16
+RUN sudo sed -i '/<applications>/a <application type="normal"><decor>no</decor><maximized>true</maximized></application>' /etc/xdg/openbox/rc.xml
