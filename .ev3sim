@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$EV3SIM_CUSTOM_TASK" ]; then
+    ev3sim
+else
+    ev3sim --custom-url $EV3SIM_CUSTOM_TASK
+fi
+
+echo ""
+echo 'ev3sim has quit. To restart use the "ev3sim" command'

@@ -1,7 +1,7 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - command: ev3sim
+  - command: ./.ev3sim
     name: ev3sim
 ports:
   - port: 5900
