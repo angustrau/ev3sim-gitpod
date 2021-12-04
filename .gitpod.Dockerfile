@@ -9,7 +9,8 @@ RUN pyenv install ${PYTHON_VERSION} \
 
 RUN git clone --branch "v${EV3SIM_VERSION}" "https://github.com/MelbourneHighSchoolRobotics/ev3sim.git" /home/gitpod/ev3sim
 COPY --chown=gitpod .user_config.yaml /home/gitpod/ev3sim/ev3sim/user_config.yaml
-RUN pip install -e /home/gitpod/ev3sim
+RUN sed -i -e 's/xdg-open/code/g' /home/gitpod/ev3sim/ev3sim/utils.py \
+    && pip install -e /home/gitpod/ev3sim
 
 # Disable SDL audio
 ENV SDL_AUDIODRIVER=disk
