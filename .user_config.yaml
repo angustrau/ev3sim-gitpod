@@ -1,7 +1,7 @@
 app:
   FPS: 30
   console_log: true
-  workspace_folder: /workspace
+  workspace_folder: /workspace/ev3sim-gitpod
 screen:
   SCREEN_HEIGHT: 720
   SCREEN_WIDTH: 960
