@@ -7,11 +7,9 @@ RUN pyenv install ${PYTHON_VERSION} \
     && pyenv global ${PYTHON_VERSION} \
     && pip3 install wheel
 
-USER root
-RUN git clone --branch "v${EV3SIM_VERSION}" "https://github.com/MelbourneHighSchoolRobotics/ev3sim.git" /ev3sim
-COPY .user_config.yaml /ev3sim/user_config.yaml
-USER gitpod
-RUN pip install -e /ev3sim
+RUN git clone --branch "v${EV3SIM_VERSION}" "https://github.com/MelbourneHighSchoolRobotics/ev3sim.git" /home/gitpod/ev3sim
+COPY .user_config.yaml /home/gitpod/ev3sim/user_config.yaml
+RUN pip install -e /home/gitpod/ev3sim
 
 # Disable SDL audio
 ENV SDL_AUDIODRIVER=disk
