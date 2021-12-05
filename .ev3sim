@@ -6,5 +6,6 @@ else
     ev3sim --custom-url $EV3SIM_CUSTOM_TASK
 fi
 
-echo ""
+printf '\n%.0s' $(seq 1 $(tput lines))
+clear -x
 echo 'ev3sim has quit. To restart use the "ev3sim" command'
